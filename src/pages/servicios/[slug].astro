@@ -74,6 +74,10 @@ const services = [
   {
     slug: "negligencias-medicas",
     icon: "tabler:shield-exclamation",
+    image: {
+      src: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&q=80",
+      alt: "Profesional sanitario revisando historial médico en consulta",
+    },
     title: "Negligencias Médicas",
     tagline: "Reclamaciones por defectuosa asistencia sanitaria",
     intro:
@@ -103,6 +107,10 @@ const services = [
   {
     slug: "accidentes-circulacion",
     icon: "tabler:car-crash",
+    image: {
+      src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      alt: "Carretera tras un accidente de tráfico",
+    },
     title: "Accidentes de Circulación",
     tagline: "Valoración completa conforme a la Ley 35/2015",
     intro:
@@ -213,8 +221,20 @@ const relatedServices = services.filter((s) => service.related.includes(s.slug))
   <main id="main-content" role="main">
 
     <!-- Hero banner -->
-    <div class="bg-[#1a2e4a]">
-      <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <div class="relative bg-[#1a2e4a] overflow-hidden">
+      {service.image && (
+        <>
+          <img
+            src={service.image.src}
+            alt={service.image.alt}
+            class="absolute inset-0 w-full h-full object-cover opacity-25"
+            loading="eager"
+            decoding="async"
+          />
+          <div class="absolute inset-0 bg-[#1a2e4a]/70"></div>
+        </>
+      )}
+      <div class="relative max-w-6xl mx-auto px-4 py-16 md:py-20">
         <ScrollReveal client:load>
           <!-- Breadcrumb -->
           <nav aria-label="Ruta de navegación" class="mb-8">

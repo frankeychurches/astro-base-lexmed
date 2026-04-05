@@ -56,22 +56,30 @@ const yearsOfExperience = new Date().getFullYear() - 2009;
         </div>
       </ScrollReveal>
 
-      <!-- Stats / visual side -->
+      <!-- Image with overlaid stats -->
       <ScrollReveal client:idle delay={0.2}>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-white rounded-xl border border-gray-200 p-6 text-center">
-            <p class="text-5xl font-bold text-[#1a2e4a] mb-1">+{yearsOfExperience}</p>
-            <p class="text-sm text-gray-500 font-medium">años de experiencia</p>
-          </div>
-          <div class="bg-white rounded-xl border border-gray-200 p-6 text-center">
-            <p class="text-5xl font-bold text-[#1a2e4a] mb-1">6</p>
-            <p class="text-sm text-gray-500 font-medium">áreas de especialidad</p>
-          </div>
-          <div class="bg-[#1a2e4a] rounded-xl p-6 text-center col-span-2">
-            <p class="text-white font-semibold mb-1">Colegiado y en activo</p>
-            <p class="text-blue-200 text-sm">
-              Almería · Espacio Alfa, Calle El Alcázar 4.2
-            </p>
+        <div class="relative rounded-2xl overflow-hidden h-80 md:h-full min-h-80">
+          <img
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"
+            alt="Consulta médica con revisión de documentación pericial"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <!-- Gradient overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#1a2e4a]/95 via-[#1a2e4a]/30 to-transparent"></div>
+          <!-- Stats anchored to bottom -->
+          <div class="absolute bottom-0 left-0 right-0 p-5">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
+                <p class="text-3xl font-bold text-white mb-0.5">+{yearsOfExperience}</p>
+                <p class="text-xs text-blue-200 font-medium">años de experiencia</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
+                <p class="text-3xl font-bold text-white mb-0.5">6</p>
+                <p class="text-xs text-blue-200 font-medium">especialidades</p>
+              </div>
+            </div>
           </div>
         </div>
       </ScrollReveal>

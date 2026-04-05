@@ -5,20 +5,32 @@ import { url } from "../utils/base";
 ---
 
 <section
-  class="min-h-screen flex items-center justify-center px-4 py-24 md:py-32 bg-white text-center"
+  class="relative min-h-screen flex items-center justify-center px-4 py-24 md:py-32 text-center overflow-hidden"
   aria-labelledby="hero-heading"
 >
-  <div class="max-w-3xl mx-auto">
+  <!-- Background image -->
+  <img
+    src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1600&q=80"
+    alt="Médico revisando documentación pericial en consulta"
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="eager"
+    decoding="async"
+  />
+  <!-- Dark navy overlay -->
+  <div class="absolute inset-0 bg-[#1a2e4a]/80"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-3xl mx-auto">
     <ScrollReveal client:load>
-      <p class="text-sm font-semibold tracking-widest text-[#1a2e4a] uppercase mb-4">
+      <p class="text-sm font-semibold tracking-widest text-blue-300 uppercase mb-4">
         Perito Médico en Almería · Desde 2009
       </p>
-      <h1 id="hero-heading" class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+      <h1 id="hero-heading" class="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
         Su perito médico de confianza en Almería
       </h1>
     </ScrollReveal>
     <ScrollReveal client:load delay={0.2}>
-      <p class="text-xl md:text-2xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+      <p class="text-xl md:text-2xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
         El Dr. Francisco José Llave Gamero elabora informes periciales médico-legales
         para particulares, letrados y compañías aseguradoras con rigor científico
         y defensa en juicio.
@@ -30,7 +42,7 @@ import { url } from "../utils/base";
           href="https://wa.me/34650403966"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1a2e4a] text-white rounded-lg hover:bg-[#14243b] transition-colors font-semibold text-lg"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1a2e4a] rounded-lg hover:bg-blue-50 transition-colors font-semibold text-lg"
           aria-label="Contactar con LexMed por WhatsApp (abre WhatsApp)"
         >
           <Icon name="tabler:brand-whatsapp" class="w-5 h-5" aria-hidden="true" />
@@ -38,7 +50,7 @@ import { url } from "../utils/base";
         </a>
         <a
           href={url("/servicios")}
-          class="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-semibold text-lg"
+          class="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white border border-white/40 rounded-lg hover:bg-white/10 transition-colors font-semibold text-lg"
         >
           Ver servicios
         </a>
