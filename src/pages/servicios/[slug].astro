@@ -273,6 +273,7 @@ const relatedServices = services.filter((s) => service.related.includes(s.slug))
         <div class="lg:col-span-2 space-y-12">
           {service.sections.map((section, i) => (
             <ScrollReveal client:idle delay={0.1 * (i + 1)}>
+              <div class="mb-16">
               <div>
                 <h2 class="text-2xl font-bold text-gray-900 mb-5">{section.heading}</h2>
                 {section.text && (
@@ -291,6 +292,7 @@ const relatedServices = services.filter((s) => service.related.includes(s.slug))
                   </ul>
                 )}
               </div>
+              </div>
             </ScrollReveal>
           ))}
         </div>
@@ -298,6 +300,7 @@ const relatedServices = services.filter((s) => service.related.includes(s.slug))
         <!-- Sidebar -->
         <aside class="space-y-6">
           <ScrollReveal client:idle delay={0.15}>
+            <div class="space-y-6">
             <!-- Audience -->
             <div class="bg-gray-50 rounded-2xl border border-gray-200 p-6">
               <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">
@@ -360,6 +363,7 @@ const relatedServices = services.filter((s) => service.related.includes(s.slug))
                 </ul>
               </div>
             )}
+            </div>
           </ScrollReveal>
         </aside>
 
