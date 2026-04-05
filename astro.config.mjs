@@ -40,9 +40,7 @@ export default defineConfig({
   },
   compressHTML: true,
   image: {
-    domains: ["images.unsplash.com"],
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-    ],
+    domains: ['images.unsplash.com'],
+    remotePatterns: [],
   },
 });
