@@ -1,6 +1,7 @@
 ---
 import ScrollReveal from "./ScrollReveal.tsx";
 import { Icon } from "astro-icon/components";
+import { url } from "../utils/base";
 
 const yearsOfExperience = new Date().getFullYear() - 2009;
 ---
@@ -46,7 +47,7 @@ const yearsOfExperience = new Date().getFullYear() - 2009;
           </div>
 
           <a
-            href="/sobre-mi"
+            href={url("/sobre-mi")}
             class="inline-flex items-center gap-2 text-[#1a2e4a] font-semibold hover:underline"
           >
             Conocer más sobre el doctor

@@ -10,6 +10,7 @@ import { SITE } from "./src/config/site.mjs";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://frankeychurches.github.io/astro-base-lexmed/',
+  base: '/astro-base-lexmed/',
   integrations: [
     react(),
     icon(),

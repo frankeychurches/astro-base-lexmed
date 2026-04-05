@@ -1,6 +1,7 @@
 ---
 import ScrollReveal from "./ScrollReveal.tsx";
 import { Icon } from "astro-icon/components";
+import { url } from "../utils/base";
 ---
 
 <section
@@ -36,7 +37,7 @@ import { Icon } from "astro-icon/components";
           <span>Contactar por WhatsApp</span>
         </a>
         <a
-          href="/servicios"
+          href={url("/servicios")}
           class="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-semibold text-lg"
         >
           Ver servicios

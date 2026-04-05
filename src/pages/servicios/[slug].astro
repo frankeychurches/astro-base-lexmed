@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import ScrollReveal from "../../components/ScrollReveal.tsx";
 import { Icon } from "astro-icon/components";
 import { SITE } from "../../config/site.mjs";
+import { url } from "../../utils/base";
 
 // ─── Content ───────────────────────────────────────────────────────────────
 const services = [
@@ -218,9 +219,9 @@ const relatedServices = services.filter((s) => service.related.includes(s.slug))
           <!-- Breadcrumb -->
           <nav aria-label="Ruta de navegación" class="mb-8">
             <ol class="flex items-center gap-2 text-sm text-blue-300">
-              <li><a href="/" class="hover:text-white transition-colors">Inicio</a></li>
+              <li><a href={url("/")} class="hover:text-white transition-colors">Inicio</a></li>
               <li aria-hidden="true" class="text-blue-500">·</li>
-              <li><a href="/servicios" class="hover:text-white transition-colors">Servicios</a></li>
+              <li><a href={url("/servicios")} class="hover:text-white transition-colors">Servicios</a></li>
               <li aria-hidden="true" class="text-blue-500">·</li>
               <li class="text-white font-medium" aria-current="page">{service.title}</li>
             </ol>
@@ -324,7 +325,7 @@ const relatedServices = services.filter((s) => service.related.includes(s.slug))
                   {relatedServices.map((rel) => (
                     <li>
                       <a
-                        href={`/servicios/${rel.slug}`}
+                        href={url(`/servicios/${rel.slug}`)}
                         class="flex items-center gap-3 group"
                       >
                         <div class="w-8 h-8 bg-gray-50 group-hover:bg-[#1a2e4a]/10 rounded-lg flex items-center justify-center shrink-0 transition-colors">
@@ -348,7 +349,7 @@ const relatedServices = services.filter((s) => service.related.includes(s.slug))
     <!-- Bottom nav -->
     <div class="border-t border-gray-100 py-8 px-4">
       <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-        <a href="/servicios" class="inline-flex items-center gap-2 text-sm text-[#1a2e4a] font-medium hover:underline">
+        <a href={url("/servicios")} class="inline-flex items-center gap-2 text-sm text-[#1a2e4a] font-medium hover:underline">
           <Icon name="tabler:arrow-left" class="w-4 h-4" aria-hidden="true" />
           Ver todos los servicios
         </a>
