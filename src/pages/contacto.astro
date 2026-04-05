@@ -1,0 +1,174 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ScrollReveal from "../components/ScrollReveal.tsx";
+import { Icon } from "astro-icon/components";
+import { SITE } from "../config/site.mjs";
+---
+
+<Layout
+  title={`Contacto | ${SITE.title}`}
+  description="Contacte con LexMed por WhatsApp: 650 403 966. Perito médico en Almería. Solo se atiende por WhatsApp."
+  canonicalURL={`${SITE.url}/contacto`}
+>
+  <Header />
+  <main id="main-content" role="main">
+    <section class="max-w-6xl mx-auto px-4 py-20">
+      <ScrollReveal client:load>
+        <p class="text-sm font-semibold tracking-widest text-[#1a2e4a] uppercase mb-3">Contacto</p>
+        <h1 class="text-5xl font-bold text-gray-900 mb-4">Hablemos</h1>
+        <p class="text-xl text-gray-500 max-w-xl mb-14 leading-relaxed">
+          Consulte su caso directamente con el Dr. Llave Gamero. La atención es personal
+          y confidencial, exclusivamente por WhatsApp.
+        </p>
+      </ScrollReveal>
+
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <!-- Contact details -->
+        <ScrollReveal client:idle delay={0.1}>
+          <div class="space-y-6">
+            <!-- WhatsApp -->
+            <div class="bg-[#1a2e4a] rounded-2xl p-8 text-white">
+              <div class="flex items-center gap-3 mb-4">
+                <Icon name="tabler:brand-whatsapp" class="w-6 h-6" aria-hidden="true" />
+                <h2 class="text-lg font-semibold">WhatsApp</h2>
+              </div>
+              <p class="text-blue-200 text-sm mb-6">
+                La forma más rápida de contactar. Respuesta en el menor tiempo posible en horario de consulta.
+              </p>
+              <a
+                href="https://wa.me/34650403966"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-white text-[#1a2e4a] rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+                aria-label="Abrir WhatsApp con el Dr. Llave Gamero"
+              >
+                <Icon name="tabler:brand-whatsapp" class="w-5 h-5" aria-hidden="true" />
+                Escribir al 650 403 966
+              </a>
+              <p class="mt-4 text-xs text-blue-300 text-center">Solo se atiende por WhatsApp</p>
+            </div>
+
+            <!-- Email -->
+            <div class="bg-white rounded-2xl border border-gray-200 p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <Icon name="tabler:mail" class="w-5 h-5 text-[#1a2e4a]" aria-hidden="true" />
+                <h2 class="text-base font-semibold text-gray-900">Correo electrónico</h2>
+              </div>
+              <a
+                href="mailto:info@peritajemedicoalmeria.com"
+                class="text-[#1a2e4a] hover:underline font-medium text-sm"
+              >
+                info@peritajemedicoalmeria.com
+              </a>
+            </div>
+
+            <!-- Address -->
+            <div class="bg-white rounded-2xl border border-gray-200 p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <Icon name="tabler:map-pin" class="w-5 h-5 text-[#1a2e4a]" aria-hidden="true" />
+                <h2 class="text-base font-semibold text-gray-900">Dirección</h2>
+              </div>
+              <address class="not-italic text-gray-600 text-sm leading-relaxed">
+                Calle El Alcázar, 4.2 - Oficina<br />
+                Espacio Alfa<br />
+                04006 Almería
+              </address>
+              <a
+                href="https://maps.google.com/?q=Calle+El+Alcázar+4+Almería"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 mt-3 text-sm text-[#1a2e4a] font-medium hover:underline"
+                aria-label="Ver en Google Maps (abre en nueva pestaña)"
+              >
+                <Icon name="tabler:map" class="w-4 h-4" aria-hidden="true" />
+                Ver en el mapa
+              </a>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        <!-- Map embed placeholder + contact form -->
+        <ScrollReveal client:idle delay={0.2}>
+          <div class="space-y-6">
+            <!-- Map -->
+            <div class="rounded-2xl overflow-hidden border border-gray-200 h-64">
+              <iframe
+                title="Ubicación de LexMed en Almería"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d796.2!2d-2.4597!3d36.8402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7aa7b1c4e3e3c1%3A0x0!2sCalle+El+Alc%C3%A1zar%2C+4%2C+04006+Almer%C3%ADa!5e0!3m2!1ses!2ses!4v1699000000000"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <!-- Simple contact form -->
+            <div class="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+              <h2 class="text-lg font-semibold text-gray-900 mb-1">Formulario de contacto</h2>
+              <p class="text-sm text-gray-500 mb-5">También puede enviarnos un mensaje y le contactaremos.</p>
+              <form
+                method="POST"
+                action="https://api.web3forms.com/submit"
+                class="space-y-4"
+                aria-label="Formulario de contacto"
+              >
+                <input type="hidden" name="access_key" value={SITE.web3formsAccessKey} />
+                <input type="hidden" name="subject" value="Nuevo mensaje desde LexMed" />
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    autocomplete="name"
+                    placeholder="Su nombre"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1a2e4a] focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    placeholder="su@email.com"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1a2e4a] focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={4}
+                    placeholder="Describa brevemente su caso..."
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1a2e4a] focus:border-transparent resize-none"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full px-6 py-3 bg-[#1a2e4a] text-white rounded-lg hover:bg-[#14243b] transition-colors font-semibold text-sm"
+                >
+                  Enviar mensaje
+                </button>
+              </form>
+            </div>
+          </div>
+        </ScrollReveal>
+
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

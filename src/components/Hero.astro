@@ -3,36 +3,45 @@ import ScrollReveal from "./ScrollReveal.tsx";
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="max-w-6xl mx-auto px-4 py-20 md:py-32 text-center" aria-labelledby="hero-heading">
-  <ScrollReveal client:load>
-    <h1 id="hero-heading" class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-      Build Something With Astro
-    </h1>
-  </ScrollReveal>
-  <ScrollReveal client:load delay={0.2}>
-    <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
-      A basic minimal starter template built for Astro with React, Framer Motion
-      and Tailwind.
-    </p>
-  </ScrollReveal>
-  <ScrollReveal client:load delay={0.4}>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a
-        href="https://github.com/jonnysmillie/astro-base"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
-        aria-label="Download Astro Base from GitHub (opens in new tab)"
-      >
-        <Icon name="tabler:download" class="w-5 h-5" aria-hidden="true" />
-        <span>Download</span>
-      </a>
-      <a
-        href="/about"
-        class="inline-block px-8 py-3 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
-      >
-        Learn More
-      </a>
-    </div>
-  </ScrollReveal>
+<section
+  class="min-h-screen flex items-center justify-center px-4 py-24 md:py-32 bg-white text-center"
+  aria-labelledby="hero-heading"
+>
+  <div class="max-w-3xl mx-auto">
+    <ScrollReveal client:load>
+      <p class="text-sm font-semibold tracking-widest text-[#1a2e4a] uppercase mb-4">
+        Perito Médico en Almería · Desde 2009
+      </p>
+      <h1 id="hero-heading" class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+        Su perito médico de confianza en Almería
+      </h1>
+    </ScrollReveal>
+    <ScrollReveal client:load delay={0.2}>
+      <p class="text-xl md:text-2xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+        El Dr. Francisco José Llave Gamero elabora informes periciales médico-legales
+        para particulares, letrados y compañías aseguradoras con rigor científico
+        y defensa en juicio.
+      </p>
+    </ScrollReveal>
+    <ScrollReveal client:load delay={0.4}>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://wa.me/34650403966"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1a2e4a] text-white rounded-lg hover:bg-[#14243b] transition-colors font-semibold text-lg"
+          aria-label="Contactar con LexMed por WhatsApp (abre WhatsApp)"
+        >
+          <Icon name="tabler:brand-whatsapp" class="w-5 h-5" aria-hidden="true" />
+          <span>Contactar por WhatsApp</span>
+        </a>
+        <a
+          href="/servicios"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-semibold text-lg"
+        >
+          Ver servicios
+        </a>
+      </div>
+    </ScrollReveal>
+  </div>
 </section>

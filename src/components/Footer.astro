@@ -3,86 +3,71 @@ import { Icon } from "astro-icon/components";
 ---
 
 <footer
-  id="contact"
   class="w-full py-12 px-4 border-t border-gray-200 bg-white"
   role="contentinfo"
 >
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-3 gap-8 mb-8">
+
+      <!-- Brand -->
       <div>
-        <h2 class="text-lg font-semibold text-gray-900 mb-4">Astro Base</h2>
-        <p class="text-gray-600">
-          A basic minimal starter template built for Astro with React, Framer
-          Motion and Tailwind.
+        <a href="/" class="text-xl font-semibold text-[#1a2e4a] mb-3 inline-block">LexMed</a>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Peritaje médico-legal en Almería. Dr. Francisco José Llave Gamero,
+          médico perito desde 2009.
         </p>
       </div>
+
+      <!-- Nav -->
       <div>
-        <h2 class="text-lg font-semibold text-gray-900 mb-4">Links</h2>
+        <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-widest mb-4">Páginas</h2>
         <ul class="space-y-2">
-          <li>
-            <a
-              href="/features"
-              class="text-gray-600 hover:text-gray-900 transition-colors"
-              >Features</a
-            >
-          </li>
-          <li>
-            <a
-              href="/about"
-              class="text-gray-600 hover:text-gray-900 transition-colors"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="/contact"
-              class="text-gray-600 hover:text-gray-900 transition-colors"
-              >Contact</a
-            >
-          </li>
+          <li><a href="/" class="text-gray-500 hover:text-gray-900 transition-colors text-sm">Inicio</a></li>
+          <li><a href="/servicios" class="text-gray-500 hover:text-gray-900 transition-colors text-sm">Servicios</a></li>
+          <li><a href="/sobre-mi" class="text-gray-500 hover:text-gray-900 transition-colors text-sm">Sobre mí</a></li>
+          <li><a href="/contacto" class="text-gray-500 hover:text-gray-900 transition-colors text-sm">Contacto</a></li>
         </ul>
       </div>
+
+      <!-- Contact -->
       <div>
-        <h2 class="text-lg font-semibold text-gray-900 mb-4">Connect</h2>
-        <ul class="space-y-2">
+        <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-widest mb-4">Contacto</h2>
+        <ul class="space-y-3">
           <li>
             <a
-              href="https://github.com"
-              class="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+              href="https://wa.me/34650403966"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visit our GitHub (opens in new tab)"
+              class="flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors text-sm"
+              aria-label="WhatsApp 650 403 966 (abre WhatsApp)"
             >
-              <Icon name="tabler:brand-github" class="w-5 h-5" aria-hidden="true" />
-              <span>GitHub</span></a
-            >
+              <Icon name="tabler:brand-whatsapp" class="w-4 h-4 shrink-0" aria-hidden="true" />
+              650 403 966
+            </a>
           </li>
           <li>
             <a
-              href="https://twitter.com"
-              class="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow us on Twitter (opens in new tab)"
+              href="mailto:info@peritajemedicoalmeria.com"
+              class="flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors text-sm"
             >
-              <Icon name="tabler:brand-twitter" class="w-5 h-5" aria-hidden="true" />
-              <span>Twitter</span></a
-            >
+              <Icon name="tabler:mail" class="w-4 h-4 shrink-0" aria-hidden="true" />
+              info@peritajemedicoalmeria.com
+            </a>
           </li>
-          <li>
-            <a
-              href="/contact"
-              class="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              <Icon name="tabler:mail" class="w-5 h-5" aria-hidden="true" />
-              <span>Email</span></a
-            >
+          <li class="flex items-start gap-2 text-gray-500 text-sm">
+            <Icon name="tabler:map-pin" class="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
+            <span>Calle El Alcázar, 4.2 · Espacio Alfa<br />04006 Almería</span>
           </li>
         </ul>
       </div>
     </div>
-    <div class="pt-8 border-t border-gray-200 text-center text-gray-600">
-      <p>&copy; {new Date().getFullYear()} Astro Base. All rights reserved.</p>
+
+    <div class="pt-8 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+      <p>&copy; {new Date().getFullYear()} LexMed · Dr. Francisco José Llave Gamero</p>
+      <div class="flex gap-6">
+        <a href="/aviso-legal" class="hover:text-gray-700 transition-colors">Aviso legal</a>
+        <a href="/politica-privacidad" class="hover:text-gray-700 transition-colors">Privacidad</a>
+      </div>
     </div>
   </div>
 </footer>

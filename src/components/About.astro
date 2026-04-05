@@ -1,0 +1,80 @@
+---
+import ScrollReveal from "./ScrollReveal.tsx";
+import { Icon } from "astro-icon/components";
+
+const yearsOfExperience = new Date().getFullYear() - 2009;
+---
+
+<section id="sobre-mi" class="bg-gray-50 py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- Text -->
+      <ScrollReveal client:idle delay={0.1}>
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-[#1a2e4a] uppercase mb-3">
+            Sobre el doctor
+          </p>
+          <h2 class="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            Dr. Francisco José<br />Llave Gamero
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Médico perito especializado en valoración del daño corporal e informes médico-legales,
+            con consulta en Almería desde 2009. Más de {yearsOfExperience} años asesorando a particulares,
+            abogados y compañías aseguradoras con rigor científico y plena disponibilidad para la
+            defensa de sus informes en juicio.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-8">
+            Su trabajo combina la medicina clínica con el Derecho para ofrecer una valoración objetiva,
+            documentada y defendible ante cualquier instancia judicial o extrajudicial.
+          </p>
+
+          <!-- Trust signals -->
+          <div class="flex flex-wrap gap-6 mb-8">
+            <div class="flex items-center gap-2">
+              <Icon name="tabler:calendar-check" class="w-5 h-5 text-[#1a2e4a]" aria-hidden="true" />
+              <span class="text-sm font-medium text-gray-700">Desde 2009</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon name="tabler:map-pin" class="w-5 h-5 text-[#1a2e4a]" aria-hidden="true" />
+              <span class="text-sm font-medium text-gray-700">Almería</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon name="tabler:gavel" class="w-5 h-5 text-[#1a2e4a]" aria-hidden="true" />
+              <span class="text-sm font-medium text-gray-700">Defensa en juicio</span>
+            </div>
+          </div>
+
+          <a
+            href="/sobre-mi"
+            class="inline-flex items-center gap-2 text-[#1a2e4a] font-semibold hover:underline"
+          >
+            Conocer más sobre el doctor
+            <Icon name="tabler:arrow-right" class="w-4 h-4" aria-hidden="true" />
+          </a>
+        </div>
+      </ScrollReveal>
+
+      <!-- Stats / visual side -->
+      <ScrollReveal client:idle delay={0.2}>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl border border-gray-200 p-6 text-center">
+            <p class="text-5xl font-bold text-[#1a2e4a] mb-1">+{yearsOfExperience}</p>
+            <p class="text-sm text-gray-500 font-medium">años de experiencia</p>
+          </div>
+          <div class="bg-white rounded-xl border border-gray-200 p-6 text-center">
+            <p class="text-5xl font-bold text-[#1a2e4a] mb-1">6</p>
+            <p class="text-sm text-gray-500 font-medium">áreas de especialidad</p>
+          </div>
+          <div class="bg-[#1a2e4a] rounded-xl p-6 text-center col-span-2">
+            <p class="text-white font-semibold mb-1">Colegiado y en activo</p>
+            <p class="text-blue-200 text-sm">
+              Almería · Espacio Alfa, Calle El Alcázar 4.2
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+
+    </div>
+  </div>
+</section>

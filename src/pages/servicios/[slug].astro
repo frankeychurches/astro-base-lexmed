@@ -1,0 +1,370 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ScrollReveal from "../../components/ScrollReveal.tsx";
+import { Icon } from "astro-icon/components";
+import { SITE } from "../../config/site.mjs";
+
+// ─── Content ───────────────────────────────────────────────────────────────
+const services = [
+  {
+    slug: "valoracion-dano-corporal",
+    icon: "tabler:stethoscope",
+    title: "Valoración del Daño Corporal",
+    tagline: "La base de cualquier reclamación médico-legal",
+    intro:
+      "La Valoración del Daño Corporal define la actuación pericial médica dirigida a conocer con la máxima exactitud y objetividad las consecuencias que un suceso traumático ha tenido sobre la integridad psicofísica y la salud de una persona, permitiendo al juzgador establecer las consecuencias penales, laborales, económicas, familiares y morales del mismo.",
+    audience: [
+      { icon: "tabler:user", label: "Particulares lesionados" },
+      { icon: "tabler:briefcase", label: "Abogados y procuradores" },
+      { icon: "tabler:building-bank", label: "Compañías aseguradoras" },
+    ],
+    sections: [
+      {
+        heading: "¿En qué consiste?",
+        text: "Se lleva a cabo por un perito médico que, tras establecer el nexo de causalidad, argumenta de forma científica en un informe pericial los días necesarios para la curación o estabilización lesional y las secuelas del lesionado.",
+      },
+      {
+        heading: "Casos más habituales",
+        list: [
+          "Accidentes de tráfico: análisis de lesiones, biomecánica lesional, baremo aplicable, días de baja y secuelas reclamables, daño personal y patrimonial.",
+          "Accidentes en transporte público: valoración por baremo del seguro de viajeros (SOVI).",
+          "Responsabilidad civil por caídas en comercios, comunidades de vecinos o el hogar.",
+          "Responsabilidad patrimonial por daños causados por una Administración Pública.",
+          "Lesiones por agresión o maltrato: evaluación para procedimientos penales.",
+          "Accidentes laborales por falta de medidas de seguridad: reclamación a empresa o aseguradora además de la cobertura de la mutua.",
+        ],
+      },
+    ],
+    related: ["informes-periciales", "accidentes-circulacion"],
+  },
+  {
+    slug: "informes-periciales",
+    icon: "tabler:file-certificate",
+    title: "Informes Periciales",
+    tagline: "Documentación técnica rigurosa para la defensa de sus derechos",
+    intro:
+      "Un informe médico de Valoración del Daño Corporal es el documento técnico-científico que sustenta cualquier reclamación médico-legal. Su rigor y exhaustividad determinan el resultado del procedimiento judicial o extrajudicial.",
+    audience: [
+      { icon: "tabler:briefcase", label: "Abogados y letrados" },
+      { icon: "tabler:user", label: "Particulares lesionados" },
+      { icon: "tabler:gavel", label: "Juzgados y tribunales" },
+    ],
+    sections: [
+      {
+        heading: "Contenido mínimo de un informe pericial",
+        list: [
+          "Relación de documentos manejados (clínicos y no clínicos).",
+          "Estudio del Estado Anterior (antecedentes médicos relevantes).",
+          "Descripción del hecho traumático.",
+          "Exploración clínica rigurosa (física y psíquica si procede).",
+          "Consideraciones Médico-Legales: influencia del Estado Anterior como concausa.",
+          "Nexo de Causalidad con criterios de causalidad para la imputación médico-legal.",
+          "Días necesarios para la estabilización lesional.",
+          "Secuelas actuales (y futuras si procede).",
+          "Incapacidad para actividades laborales y habituales.",
+          "Conclusiones Médico-Legales.",
+        ],
+      },
+    ],
+    related: ["valoracion-dano-corporal", "negligencias-medicas"],
+  },
+  {
+    slug: "negligencias-medicas",
+    icon: "tabler:shield-exclamation",
+    title: "Negligencias Médicas",
+    tagline: "Reclamaciones por defectuosa asistencia sanitaria",
+    intro:
+      "Las reclamaciones por negligencia médica requieren un análisis experto que determine si se infringió la lex artis y si existe relación causa-efecto entre esa infracción y los daños sufridos por el paciente.",
+    audience: [
+      { icon: "tabler:user", label: "Pacientes afectados" },
+      { icon: "tabler:briefcase", label: "Abogados especialistas" },
+      { icon: "tabler:users", label: "Familiares del afectado" },
+    ],
+    sections: [
+      {
+        heading: "Vías de reclamación",
+        list: [
+          "Penal: privación de libertad e inhabilitación profesional del médico responsable.",
+          "Civil: ejercicio privado de la medicina.",
+          "Contencioso-administrativo: reclamaciones a la sanidad pública.",
+          "Social: reintegro de gastos por asistencia en centro privado por urgencia vital, error diagnóstico o denegación de asistencia.",
+        ],
+      },
+      {
+        heading: "Proceso de actuación",
+        text: "Primero se emite un preinforme de viabilidad para determinar si se infringió la lex artis y si existe relación causa-efecto con los daños sufridos. Solo si procede, se realiza una pericial de valoración exhaustiva de los daños para cuantificar la indemnización reclamable.",
+      },
+    ],
+    related: ["informes-periciales", "consultoria-medico-legal"],
+  },
+  {
+    slug: "accidentes-circulacion",
+    icon: "tabler:car-crash",
+    title: "Accidentes de Circulación",
+    tagline: "Valoración completa conforme a la Ley 35/2015",
+    intro:
+      "Los accidentes de circulación son un problema de salud pública por su alta morbilidad y mortalidad. Las lesiones se valoran conforme al RD 08/2004 y, para siniestros desde el 1 de enero de 2016, por la Ley 35/2015 de 22 de septiembre.",
+    audience: [
+      { icon: "tabler:user", label: "Víctimas de accidente" },
+      { icon: "tabler:briefcase", label: "Abogados de tráfico" },
+      { icon: "tabler:building-bank", label: "Aseguradoras" },
+    ],
+    sections: [
+      {
+        heading: "Sistemática de trabajo",
+        list: [
+          "Evaluación del Estado Anterior.",
+          "Descripción de la evolución clínica del lesionado.",
+          "Anamnesis dirigida.",
+          "Exploración física y psíquica rigurosa.",
+          "Pruebas diagnósticas avanzadas, o recomendación de las adecuadas.",
+          "Consideraciones Médico-Legales basadas en criterios de causalidad.",
+          "Días necesarios para la estabilización lesional, argumentados.",
+          "Secuelas actuales y futuras, argumentadas.",
+          "Incapacidad para actividades habituales, argumentada.",
+          "Gastos médicos y paramédicos actuales y futuros.",
+          "Otros apartados según el caso concreto.",
+        ],
+      },
+    ],
+    related: ["valoracion-dano-corporal", "informes-periciales"],
+  },
+  {
+    slug: "incapacidades",
+    icon: "tabler:clipboard-heart",
+    title: "Incapacidades",
+    tagline: "Defensa del reconocimiento de incapacidad laboral",
+    intro:
+      "La incapacidad laboral es una especialidad crítica: la situación del paciente al que no se le reconoce su condición es grave, pero el reconocimiento indebido tiene un alto coste para el sistema. Se realiza una valoración funcional completa con criterios biomecánicos.",
+    audience: [
+      { icon: "tabler:user", label: "Trabajadores afectados" },
+      { icon: "tabler:briefcase", label: "Letrados laboralistas" },
+      { icon: "tabler:building", label: "Empresas y mutuas" },
+    ],
+    sections: [
+      {
+        heading: "Tipos de procesos cubiertos",
+        list: [
+          "Incapacidad Temporal (IT): enfermedad común (EC), enfermedad profesional (EP), accidente no laboral (ANL) y accidente de trabajo (AT).",
+          "Impugnaciones de alta laboral y cambios de contingencias.",
+          "Incapacidad Permanente: Parcial, Total, Absoluta y Gran Invalidez.",
+          "Informes periciales para reclamaciones previas y demandas por denegación, disconformidad con el grado concedido, o revisiones de grado.",
+          "Consultoría a letrados y asistencia a juicio para ratificación del informe.",
+        ],
+      },
+    ],
+    related: ["valoracion-dano-corporal", "consultoria-medico-legal"],
+  },
+  {
+    slug: "consultoria-medico-legal",
+    icon: "tabler:scale",
+    title: "Consultoría Médico-Legal",
+    tagline: "Asesoramiento experto antes de actuar",
+    intro:
+      "Asesoramiento e información documentada a clientes particulares y profesionales del Derecho en materia médico-legal. Un servicio orientado a clarificar la situación y evaluar la viabilidad antes de iniciar cualquier procedimiento.",
+    audience: [
+      { icon: "tabler:user", label: "Particulares" },
+      { icon: "tabler:briefcase", label: "Abogados y letrados" },
+      { icon: "tabler:building-bank", label: "Compañías aseguradoras" },
+    ],
+    sections: [
+      {
+        heading: "Áreas de asesoramiento",
+        list: [
+          "Accidentes de circulación.",
+          "Accidentes laborales.",
+          "Incapacidades.",
+          "Malpraxis médica.",
+          "Otros asuntos médico-legales relacionados.",
+        ],
+      },
+    ],
+    related: ["informes-periciales", "negligencias-medicas"],
+  },
+];
+
+// ─── Routing ───────────────────────────────────────────────────────────────
+export function getStaticPaths() {
+  const allServices = [
+    "valoracion-dano-corporal",
+    "informes-periciales",
+    "negligencias-medicas",
+    "accidentes-circulacion",
+    "incapacidades",
+    "consultoria-medico-legal",
+  ];
+  return allServices.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const service = services.find((s) => s.slug === slug)!;
+const relatedServices = services.filter((s) => service.related.includes(s.slug));
+---
+
+<Layout
+  title={`${service.title} | ${SITE.title}`}
+  description={service.intro}
+  canonicalURL={`${SITE.url}/servicios/${service.slug}`}
+>
+  <Header />
+  <main id="main-content" role="main">
+
+    <!-- Hero banner -->
+    <div class="bg-[#1a2e4a]">
+      <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+        <ScrollReveal client:load>
+          <!-- Breadcrumb -->
+          <nav aria-label="Ruta de navegación" class="mb-8">
+            <ol class="flex items-center gap-2 text-sm text-blue-300">
+              <li><a href="/" class="hover:text-white transition-colors">Inicio</a></li>
+              <li aria-hidden="true" class="text-blue-500">·</li>
+              <li><a href="/servicios" class="hover:text-white transition-colors">Servicios</a></li>
+              <li aria-hidden="true" class="text-blue-500">·</li>
+              <li class="text-white font-medium" aria-current="page">{service.title}</li>
+            </ol>
+          </nav>
+
+          <!-- Large icon -->
+          <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+            <Icon name={service.icon} class="w-8 h-8 text-white" aria-hidden="true" />
+          </div>
+
+          <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-3">
+            {service.tagline}
+          </p>
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+            {service.title}
+          </h1>
+          <p class="text-blue-200 text-lg leading-relaxed max-w-2xl">
+            {service.intro}
+          </p>
+        </ScrollReveal>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <div class="grid lg:grid-cols-3 gap-12">
+
+        <!-- Main content -->
+        <div class="lg:col-span-2 space-y-12">
+          {service.sections.map((section, i) => (
+            <ScrollReveal client:idle delay={0.1 * (i + 1)}>
+              <div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-5">{section.heading}</h2>
+                {section.text && (
+                  <p class="text-gray-600 leading-relaxed text-lg">{section.text}</p>
+                )}
+                {section.list && (
+                  <ul class="space-y-3">
+                    {section.list.map((item) => (
+                      <li class="flex items-start gap-3 text-gray-600">
+                        <span class="mt-1.5 w-5 h-5 rounded-full bg-[#1a2e4a]/10 flex items-center justify-center shrink-0">
+                          <Icon name="tabler:check" class="w-3 h-3 text-[#1a2e4a]" aria-hidden="true" />
+                        </span>
+                        <span class="leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-6">
+          <ScrollReveal client:idle delay={0.15}>
+            <!-- Audience -->
+            <div class="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+              <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">
+                ¿Para quién es?
+              </h2>
+              <ul class="space-y-3">
+                {service.audience.map(({ icon, label }) => (
+                  <li class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-[#1a2e4a]/10 rounded-lg flex items-center justify-center shrink-0">
+                      <Icon name={icon} class="w-4 h-4 text-[#1a2e4a]" aria-hidden="true" />
+                    </div>
+                    <span class="text-gray-700 text-sm font-medium">{label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- CTA card -->
+            <div class="bg-[#1a2e4a] rounded-2xl p-6 text-center">
+              <Icon name="tabler:brand-whatsapp" class="w-8 h-8 text-white mx-auto mb-3" aria-hidden="true" />
+              <h2 class="text-white font-bold text-lg mb-2">¿Necesita este servicio?</h2>
+              <p class="text-blue-200 text-sm mb-5">
+                Consulte su caso directamente con el Dr. Llave Gamero por WhatsApp.
+              </p>
+              <a
+                href="https://wa.me/34650403966"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-white text-[#1a2e4a] rounded-lg hover:bg-gray-100 transition-colors font-semibold text-sm"
+                aria-label="Contactar por WhatsApp (abre WhatsApp)"
+              >
+                <Icon name="tabler:brand-whatsapp" class="w-4 h-4" aria-hidden="true" />
+                Escribir por WhatsApp
+              </a>
+              <p class="mt-3 text-xs text-blue-300">Solo se atiende por WhatsApp · 650 403 966</p>
+            </div>
+
+            <!-- Related services -->
+            {relatedServices.length > 0 && (
+              <div class="bg-white rounded-2xl border border-gray-200 p-6">
+                <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">
+                  Servicios relacionados
+                </h2>
+                <ul class="space-y-3">
+                  {relatedServices.map((rel) => (
+                    <li>
+                      <a
+                        href={`/servicios/${rel.slug}`}
+                        class="flex items-center gap-3 group"
+                      >
+                        <div class="w-8 h-8 bg-gray-50 group-hover:bg-[#1a2e4a]/10 rounded-lg flex items-center justify-center shrink-0 transition-colors">
+                          <Icon name={rel.icon} class="w-4 h-4 text-[#1a2e4a]" aria-hidden="true" />
+                        </div>
+                        <span class="text-sm font-medium text-gray-700 group-hover:text-[#1a2e4a] transition-colors leading-snug">
+                          {rel.title}
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </ScrollReveal>
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- Bottom nav -->
+    <div class="border-t border-gray-100 py-8 px-4">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+        <a href="/servicios" class="inline-flex items-center gap-2 text-sm text-[#1a2e4a] font-medium hover:underline">
+          <Icon name="tabler:arrow-left" class="w-4 h-4" aria-hidden="true" />
+          Ver todos los servicios
+        </a>
+        <a
+          href="https://wa.me/34650403966"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1a2e4a] text-white text-sm font-semibold rounded-lg hover:bg-[#14243b] transition-colors"
+          aria-label="Contactar por WhatsApp (abre WhatsApp)"
+        >
+          <Icon name="tabler:brand-whatsapp" class="w-4 h-4" aria-hidden="true" />
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </main>
+  <Footer />
+</Layout>

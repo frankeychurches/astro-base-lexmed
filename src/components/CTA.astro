@@ -3,23 +3,32 @@ import ScrollReveal from "./ScrollReveal.tsx";
 import { Icon } from "astro-icon/components";
 ---
 
-<section id="about" class="max-w-6xl mx-auto px-4 py-20">
+<section class="max-w-6xl mx-auto px-4 py-20">
   <ScrollReveal client:idle scale={true}>
-    <div class="bg-black rounded-2xl p-12 text-center text-white">
-      <h2 class="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-        Start building your next project with this minimal and powerful starter
-        template.
+    <div class="bg-[#1a2e4a] rounded-2xl p-12 text-center text-white">
+      <h2 class="text-4xl font-bold mb-4">¿Necesita un informe pericial?</h2>
+      <p class="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
+        Consulte su caso sin compromiso. Atendemos por WhatsApp de forma rápida y discreta.
       </p>
-      <a
-        href="https://github.com/jonnysmillie/astro-base"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-8 py-3 bg-white text-black rounded-lg hover:bg-gray-100 transition-colors font-medium"
-      >
-        <Icon name="tabler:download" class="w-5 h-5" aria-hidden="true" />
-        Download
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://wa.me/34650403966"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#1a2e4a] rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg"
+          aria-label="Escribir al Dr. Llave Gamero por WhatsApp (abre WhatsApp)"
+        >
+          <Icon name="tabler:brand-whatsapp" class="w-5 h-5" aria-hidden="true" />
+          Escribir por WhatsApp
+        </a>
+        <a
+          href="/contacto"
+          class="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white border border-white/40 rounded-lg hover:bg-white/10 transition-colors font-semibold text-lg"
+        >
+          Ver datos de contacto
+        </a>
+      </div>
+      <p class="mt-6 text-blue-300 text-sm">Solo se atiende por WhatsApp · 650 403 966</p>
     </div>
   </ScrollReveal>
 </section>

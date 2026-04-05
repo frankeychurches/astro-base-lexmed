@@ -1,0 +1,146 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CTA from "../components/CTA.astro";
+import ScrollReveal from "../components/ScrollReveal.tsx";
+import { Icon } from "astro-icon/components";
+import { SITE } from "../config/site.mjs";
+
+const yearsOfExperience = new Date().getFullYear() - 2009;
+---
+
+<Layout
+  title={`Sobre mí | ${SITE.title}`}
+  description="Dr. Francisco José Llave Gamero, médico perito en Almería desde 2009. Especializado en valoración del daño corporal e informes periciales médico-legales."
+  canonicalURL={`${SITE.url}/sobre-mi`}
+>
+  <Header />
+  <main id="main-content" role="main">
+
+    <!-- Header section -->
+    <section class="max-w-6xl mx-auto px-4 py-20">
+      <ScrollReveal client:load>
+        <p class="text-sm font-semibold tracking-widest text-[#1a2e4a] uppercase mb-3">Sobre el doctor</p>
+        <h1 class="text-5xl font-bold text-gray-900 mb-6">
+          Dr. Francisco José<br />Llave Gamero
+        </h1>
+        <p class="text-xl text-gray-500 max-w-2xl leading-relaxed">
+          Médico perito especializado en valoración del daño corporal e informes médico-legales,
+          con consulta en Almería desde 2009.
+        </p>
+      </ScrollReveal>
+    </section>
+
+    <!-- Bio section -->
+    <section class="bg-gray-50 py-20 px-4">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-start">
+
+        <ScrollReveal client:idle delay={0.1}>
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Trayectoria profesional</h2>
+            <div class="space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                El Dr. Francisco José Llave Gamero ejerce como médico perito en Almería desde 2009,
+                con más de {yearsOfExperience} años de experiencia en peritaje médico-legal y valoración
+                del daño corporal.
+              </p>
+              <p>
+                Su trabajo combina el rigor de la medicina clínica con el conocimiento del ordenamiento
+                jurídico para ofrecer informes periciales objetivos, documentados y defendibles ante
+                cualquier instancia judicial o extrajudicial.
+              </p>
+              <p>
+                Atiende a particulares, letrados y compañías aseguradoras, prestando especial atención
+                a casos de accidentes de tráfico, negligencias médicas e incapacidades laborales.
+                Sus informes tienen como objetivo proteger los derechos de sus clientes mediante una
+                argumentación médico-legal sólida y actualizada.
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal client:idle delay={0.2}>
+          <div class="space-y-4">
+            <!-- Key facts -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">Datos clave</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <Icon name="tabler:calendar-check" class="w-5 h-5 text-[#1a2e4a] mt-0.5 shrink-0" aria-hidden="true" />
+                  <div>
+                    <p class="font-medium text-gray-900">En ejercicio desde 2009</p>
+                    <p class="text-sm text-gray-500">Más de {yearsOfExperience} años de experiencia pericial</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <Icon name="tabler:map-pin" class="w-5 h-5 text-[#1a2e4a] mt-0.5 shrink-0" aria-hidden="true" />
+                  <div>
+                    <p class="font-medium text-gray-900">Almería</p>
+                    <p class="text-sm text-gray-500">Espacio Alfa · Calle El Alcázar, 4.2 · 04006</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <Icon name="tabler:users" class="w-5 h-5 text-[#1a2e4a] mt-0.5 shrink-0" aria-hidden="true" />
+                  <div>
+                    <p class="font-medium text-gray-900">Clientes</p>
+                    <p class="text-sm text-gray-500">Particulares, letrados y compañías aseguradoras</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <Icon name="tabler:gavel" class="w-5 h-5 text-[#1a2e4a] mt-0.5 shrink-0" aria-hidden="true" />
+                  <div>
+                    <p class="font-medium text-gray-900">Defensa en juicio</p>
+                    <p class="text-sm text-gray-500">Ratificación de informes en sede judicial</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Doctoralia -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-3">Perfil profesional</h3>
+              <a
+                href="https://www.doctoralia.es/francisco-jose-llave-gamero/medico-de-familia-medico-general/almeria"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-[#1a2e4a] font-medium hover:underline text-sm"
+                aria-label="Ver perfil en Doctoralia (abre en nueva pestaña)"
+              >
+                <Icon name="tabler:external-link" class="w-4 h-4" aria-hidden="true" />
+                Ver perfil en Doctoralia
+              </a>
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+
+    <!-- Specialties -->
+    <section class="max-w-6xl mx-auto px-4 py-20">
+      <ScrollReveal client:idle delay={0.1}>
+        <h2 class="text-3xl font-bold text-gray-900 mb-10">Áreas de especialidad</h2>
+      </ScrollReveal>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          { icon: "tabler:stethoscope", label: "Valoración del daño corporal" },
+          { icon: "tabler:file-certificate", label: "Informes periciales" },
+          { icon: "tabler:alert-triangle", label: "Negligencias médicas" },
+          { icon: "tabler:car-crash", label: "Accidentes de circulación" },
+          { icon: "tabler:clipboard-heart", label: "Incapacidades laborales" },
+          { icon: "tabler:scale", label: "Consultoría médico-legal" },
+        ].map((item, index) => (
+          <ScrollReveal client:idle delay={0.1 * (index + 1)}>
+            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200">
+              <Icon name={item.icon} class="w-5 h-5 text-[#1a2e4a] shrink-0" aria-hidden="true" />
+              <span class="text-gray-700 font-medium text-sm">{item.label}</span>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
